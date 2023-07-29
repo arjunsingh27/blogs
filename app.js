@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 async function conCheck(){
 try{
-  await mongoose.connect("mongodb://127.0.0.1/blogdb");
+  await mongoose.connect("mongodb+srv://arjunsingh27:Test123@cluster0.0t9vaxx.mongodb.net/blogDB");
   console.log("connected");
 }catch(err){
 console.log(err);
