@@ -10,10 +10,10 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+passward = process.env.passwd
 async function conCheck(){
 try{
-  await mongoose.connect("mongodb+srv://arjunsingh27:Test123@cluster0.0t9vaxx.mongodb.net/blogDB");
+  await mongoose.connect("mongodb+srv://arjunsingh27:"+passward+"@cluster0.0t9vaxx.mongodb.net/blogDB");
   console.log("connected");
 }catch(err){
 console.log(err);
