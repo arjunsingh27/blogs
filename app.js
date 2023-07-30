@@ -5,17 +5,15 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose")
-require(".dotenv").config();
+require('dotenv').config();
 conCheck();
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-passward = process.env.passwd;
-console.log("passward"+passward);
 async function conCheck(){
 try{
-  await mongoose.connect("mongodb+srv://arjunsingh27:"+passward+"@cluster0.0t9vaxx.mongodb.net/blogDB");
+  await mongoose.connect("mongodb+srv://arjunsingh27:"+process.env.PASSWORD+"@cluster0.0t9vaxx.mongodb.net/blogDB");
   console.log("connected");
 }catch(err){
 console.log(err);
