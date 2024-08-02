@@ -43,7 +43,7 @@ app.get("/", function (req, res) {
   Post.find({})
   .then((posts) => {
     console.log(posts);
-    res.render("home", { home: "HOM", startingContent: homeStartingContent, posts:posts});
+    res.render("home", { home: "HOME", startingContent: homeStartingContent, posts:posts});
   })
   .catch(err => {
     // Handle any errors that occurred during the query
